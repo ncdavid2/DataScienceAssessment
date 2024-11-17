@@ -8,7 +8,7 @@ print("Columns before deletion:")
 print(df.columns)
 
 # Delete a specific column
-columns_to_delete = ['Data_Value', 'Data_Value_Footnote_Symbol', 'Data_Value_Footnote', 'Low_Confidence_Limit',
+columns_to_delete = ['Data_Value_Footnote_Symbol', 'Data_Value_Footnote', 'Low_Confidence_Limit',
                      'Data_Value_Type', 'High_Confidence_Limit', 'Numerator', 'Sample_Size', 'DataValueTypeID', 'GeoLocation', 'Geographic Level']
 
 df = df.drop(columns=columns_to_delete)
@@ -16,6 +16,8 @@ df = df.drop(columns=columns_to_delete)
 # Print the column names after deletion
 print("\nColumns after deletion:")
 print(df.columns)
+
+df['Data_Value'] = df['Data_Value'].fillna(0)
 
 # Save the updated DataFrame back to a CSV file (optional)
 df.to_csv('updated_NSCH_Vision_Health_Data.csv', index=False)

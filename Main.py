@@ -7,19 +7,19 @@ import pandas as pd
 # Pfad zur CSV-Datei im Downloads-Ordner
 file_path = 'National_Survey_of_Children_s_Health__NSCH____Vision_and_Eye_Health_Surveillance.csv'
 
-# CSV-Datei auslesen
+# CSV-file reader
 df = pd.read_csv(file_path)
 
-# Anzeigeeinstellungen erweitern
+# Information shown expansion
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
-# Erste Zeilen anzeigen, um einen Überblick über die Daten zu bekommen
+# return the first few rows
 print(df.head())
 
-# Zeige die Gesamte anzahl an Datensätzen an
+# shows how many columns are in the file
 print(df.count().sum())
 
-# Zeige wieviele null Datensätze es gibt
+# shows how any columns in the file are null
 print(df.isnull().sum().sum())
 

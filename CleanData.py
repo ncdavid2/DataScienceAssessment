@@ -22,6 +22,6 @@ print(df.columns)
 
 df['Data_Value'] = df['Data_Value'].fillna(0)
 
-# Save the updated DataFrame back to a CSV file (optional)
+# Save the updated DataFrame back to a CSV file
 df.to_csv('updated_NSCH_Vision_Health_Data.csv', index=False)
 

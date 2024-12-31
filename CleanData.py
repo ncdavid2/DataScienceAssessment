@@ -1,13 +1,9 @@
 import pandas as pd
 
-# Load the CSV file
 df = pd.read_csv('National_Survey_of_Children_s_Health__NSCH____Vision_and_Eye_Health_Surveillance.csv')
 
-# Print the column names before deletion
 print("Columns before deletion:")
 print(df.columns)
-
-# Delete a specific column
 columns_to_delete = ['Data_Value_Footnote_Symbol', 'Data_Value_Footnote', 'Low_Confidence_Limit', 'TopicID', 'CategoryID', 'QuestionID', 'ResponseID',
                      'AgeID', 'GenderID', 'Data_Value_Type', 'High_Confidence_Limit', 'Numerator', 'DataValueTypeID', 'GeoLocation', 'Geographic Level',
                      'RaceEthnicityID', 'RiskFactorID', 'RiskFactorResponseID', 'Datasource', 'RiskFactor', 'RiskFactorResponse', 'LocationID']
@@ -16,7 +12,6 @@ df = df.drop(columns=columns_to_delete)
 
 df.dropna(subset=['Sample_Size'], inplace=True)
 
-# Print the column names after deletion
 print("\nColumns after deletion:")
 print(df.columns)
 
